@@ -1,10 +1,10 @@
 <template>
-  <div class="container flex flex-col min-h-full mx-auto bg-transparent">
-    <div class="flex-initial w-full">
+  <div class="container mx-auto bg-transparent">
+    <div>
 
       <Header />
 
-      <div class="content-wrapper w-auto h-auto shadow-lg rounded">
+      <div class="content-wrapper shadow-lg rounded">
 
         <Nuxt />
 
