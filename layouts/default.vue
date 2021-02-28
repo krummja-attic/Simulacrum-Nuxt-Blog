@@ -1,8 +1,11 @@
 <template>
   <div class="container mx-auto bg-transparent">
+
     <div>
 
       <Header />
+
+      <TabBar />
 
       <div class="content-wrapper shadow-lg rounded">
 
@@ -11,6 +14,7 @@
       </div>
 
       <Footer />
+
     </div>
   </div>
 </template>
@@ -19,10 +23,13 @@
 <script>
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import TabBar from '@/components/TabBar';
+
 export default {
   components: {
     Header,
-    Footer
+    Footer,
+    TabBar
   }
 }
 </script>
@@ -50,7 +57,7 @@ html {
 }
 
 .content-wrapper {
-  padding: 40px 0;
+  padding: 40px 30px;
   background-color: #F7F3EF;
 }
 

@@ -5,10 +5,6 @@
 
     <ArticleListing :articles="articles" />
 
-    <h1 class="mb-6">My Notebook</h1>
-
-    <h1 class="mb-6">Tutorials and Guides</h1>
-
   </div>
 </template>
 
@@ -16,12 +12,16 @@
 <script>
 import ArticleListing from '@/components/ArticleListing';
 import Header from '@/components/Header';
+import { VueMathjax } from 'vue-mathjax';
 
 export default {
+
     components: {
       ArticleListing,
       Header,
+      'vue-mathjax': VueMathjax
     },
+
     async asyncData({ $content, params })
     {
         const articles = await $content('articles', params.slug)
@@ -32,15 +32,22 @@ export default {
         return {
             articles
         }
+    },
+
+    data () {
+      return {
+        formula: '$$\\lambda x . P(x) \\land Q(x, y)$$'
+      }
     }
 }
+
 </script>
 
 
 <style scoped>
 h1 {
   padding: 10px 0;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: bold;
   line-height: 1.4em;
 }
