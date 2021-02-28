@@ -38,6 +38,7 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
 
 html {
   font-family: 'PT Serif', Georgia, Times, "Times New Roman", serif;
@@ -58,7 +59,7 @@ html {
 
 .content-wrapper {
   padding: 40px 30px;
-  background-color: #F7F3EF;
+  background-color: rgba(247, 243, 239, 1);
 }
 
 *,

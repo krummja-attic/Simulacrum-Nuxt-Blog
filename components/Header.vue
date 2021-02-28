@@ -1,7 +1,14 @@
 <template>
     <div>
         <!-- <SimulacrumLogo /> -->
-        <h1 class="title my-12 text-6xl font-bold tracking-wide">Simulacrum</h1>
+        <h1 class="
+            title
+            xs:my-2 md:my-12
+            xs:text-3xl md:text-5xl
+            font-bold tracking-wide
+        ">
+            <NuxtLink to="/">Simulacrum</NuxtLink>
+        </h1>
     </div>
 </template>
 
@@ -15,8 +22,3 @@ export default {
     }
 }
 </script>
-
-
-<style scoped>
-
-</style>
