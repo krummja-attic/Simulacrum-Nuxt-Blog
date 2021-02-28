@@ -18,8 +18,5 @@ export default {
 
 
 <style scoped>
-.title {
-  font-family: 'PT Serif', Georgia, Times, "Times New Roman", serif;
-  color: #404040;
-}
+
 </style>
