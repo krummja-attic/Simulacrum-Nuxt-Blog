@@ -4,13 +4,14 @@
             class="tab"
             active-class="tab-primary"
             :class="{'tab-secondary': this.$route.path != '/',
-                     'tab-ternary': this.$route.params.slug }"
+                     'tab-ternary': this.$route.path == '/blog/' + this.$route.params.slug }"
             to="/">Blog</NuxtLink>
         <NuxtLink
             class="tab"
             active-class="tab-primary"
-            :class="{'tab-secondary': this.$route.path != '/notebook'}"
-            to="/notebook">Notebook</NuxtLink>
+            :class="{'tab-secondary': this.$route.path != '/notebookIndex',
+                     'tab-ternary': this.$route.path == '/notebook/' + this.$route.params.slug }"
+            to="/notebookIndex">Notebook</NuxtLink>
         <NuxtLink
             class="tab"
             active-class="tab-primary"
@@ -23,6 +24,7 @@
 <style scoped>
 .tab-primary {
     font-weight: bold;
+    color: #5e5e5e;
     background-color: #F7F3EF;
 }
 
@@ -34,14 +36,15 @@
 
 .tab-ternary {
     font-weight: bold;
+    color: #5e5e5e;
     background-color: #F7F3EF;
 }
 
 .tab {
+    padding-top: 2px;
     width: 120px;
+    height: 30px;
     border-radius: 10px 10px 0 0;
-    font-size: 1.2rem;
-    font-variant: small-caps;
-    text-transform: lowercase;
+    font-size: 1.0rem;
 }
 </style>

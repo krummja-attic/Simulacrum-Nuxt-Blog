@@ -29,7 +29,10 @@ export default {
       }
     ],
     script: [
-      { src: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML' }
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML' },
+      { src: 'https://d3js.org/d3.v6.min.js' },
+      { src: '//unpkg.com/graphre/dist/graphre.js' },
+      { src: '//unpkg.com/nomnoml/dist/nomnoml.js' }
     ]
   },
 
@@ -61,5 +64,10 @@ export default {
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    extend (config, { isDev, isClient }) {
+      config.node = {
+        fs: 'empty'
+      }
+    }
   }
 }

@@ -2,47 +2,30 @@
     <div>
 
         <div class="
-            article
+            note
             xs:w-full md:w-full px-2
             xs:mb-6 md:mb-12
         ">
 
-            <div class="tag-line flex flex-row-reverse">
-            <span v-for="(tag, id) in article.tags" :key="id">
-                <NuxtLink :to="`/tag/${tags[tag].slug}`">
-                    <span
-                        class="
-                        tag-pill
-                        px-2 py-1
-                        rounded-full border border-light-border dark:border-dark-border
-                        transition-colors duration-300 ease-linear
-                        truncate uppercase tracking-wider font-medium text-ss
-                    ">
-                        {{ tags[tag].name }}
-                    </span>
-                </NuxtLink>
-            </span>
-            </div>
-
-            <div class="article-header">
+            <div class="note-header">
 
                 <h1 class="
-                    article-title
+                    note-title
                     tracking-wide font-bold
                     xs:text-2xl md:text-3xl
                     xs:my-4 md:my-8
                 ">
-                    {{ article.title }}
+                    {{ note.title }}
                 </h1>
 
                 <div class="xs:my-2 md:my-8">
-                    {{ formatDate(article.createdAt) }}
+                    {{ formatDate(note.createdAt) }}
                 </div>
 
             </div>
 
             <div class="
-                article-body
+                note-body
                 sm:mx-1
                 md:mx-16
                 lg:mx-32
@@ -57,11 +40,13 @@
                     xl:mx-24
                 ">
                     <hr class="mb-2"/>
-                    {{ article.description }}
+                    {{ note.description }}
                     <hr class="mt-2"/>
                 </div>
 
-                <nuxt-content :document="article" />
+                <!-- <hr class="my-4" /> -->
+
+                <nuxt-content :document="note" />
 
             </div>
         </div>
@@ -73,16 +58,8 @@
 <script>
 export default {
     async asyncData ({ $content, params }) {
-        const article = await $content('articles', params.slug).fetch();
-
-        const tagsList = await $content('tags')
-            .only(['name', 'slug'])
-            .where({ name: { $containsAny: article.tags } })
-            .fetch()
-
-        const tags = Object.assign({}, ...tagsList.map((s) => ({ [s.name]: s })))
-
-        return { article, tags };
+        const note = await $content('notes', params.slug).fetch();
+        return { note };
     },
     methods: {
         formatDate(date)
@@ -96,7 +73,7 @@ export default {
 
 
 <style>
-.article-header {
+.note-header {
     text-align: center;
 }
 
@@ -105,7 +82,7 @@ export default {
     font-style: italic;
 }
 
-.article {
+.note {
     text-align: justify;
 }
 
@@ -153,5 +130,7 @@ export default {
 
 .nuxt-content .footnotes li {
     margin-top: 8px;
+    padding-left: 30px;
+    text-indent: -30px;
 }
 </style>

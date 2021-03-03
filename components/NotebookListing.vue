@@ -1,32 +1,24 @@
 <template>
     <ul class="flex flex-wrap">
-
-        <li v-for="article of articles"
-            :key="article.slug"
+        <li v-for="note of notes"
+            :key="note.slug"
             class="xs:w-full md:w-1/2 px-2 xs:mb-6 md:mb-12 article-card">
 
-            <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }" class="
+            <NuxtLink :to="{ name: 'notebook-slug', params: { slug: note.slug } }" class="
                 flex
                 transition-shadow duration-150 ease-in-out
                 shadow-sm hover:shadow-md xxlmax:flex-col
             ">
 
-                <img
-                    v-if="article.img"
-                    class="h-48 xxlmin:w-1/2 xxlmax:w-full object-cover"
-                    :src="article.img"
-                />
-
-                <div class="desc-box p-5 flex flex-col xxlmin:w-1/2 xxlmax:w-full">
-                    <h2 class="text-lg font-bold">{{ article.title }}</h2>
-                    <p class="date">{{ formatDate(article.createdAt) }}</p>
-                    <p class="desc fade">{{ article.description }}</p>
+                <div class="desc-box p-5 px-5 flex flex-col">
+                    <h2 class="text-lg font-bold">{{ note.title }}</h2>
+                    <p class="date">{{ formatDate(note.createdAt) }}</p>
+                    <p class="desc fade">{{ note.description }}</p>
                 </div>
 
             </NuxtLink>
 
         </li>
-
     </ul>
 </template>
 
@@ -34,9 +26,9 @@
 <script>
 export default {
     props: {
-        articles: Array
+        notes: Array,
+        tags: Array,
     },
-
     methods: {
         formatDate(date)
         {
@@ -74,6 +66,7 @@ export default {
     width: 100%;
     color: #404040;
     padding-top: 5px;
+    padding-right: 5px;
     font-style: italic;
     overflow: hidden;
 }
@@ -89,7 +82,7 @@ export default {
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 70%;
+    width: 40%;
     height: 1.2em;
     background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(247, 243, 239, 1) 50%);
 }

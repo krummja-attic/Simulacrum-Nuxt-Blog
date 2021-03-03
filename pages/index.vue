@@ -11,36 +11,30 @@
 
 <script>
 import ArticleListing from '@/components/ArticleListing';
-import Header from '@/components/Header';
-import { VueMathjax } from 'vue-mathjax';
 
 export default {
-
     components: {
-      ArticleListing,
-      Header,
-      'vue-mathjax': VueMathjax
+      ArticleListing
     },
 
     async asyncData({ $content, params })
     {
         const articles = await $content('articles', params.slug)
-        .only(['title', 'description', 'createdAt', 'img', 'slug'])
-        .sortBy('createdAt', 'desc')
-        .fetch()
+          .only(['title', 'description', 'createdAt', 'img', 'slug'])
+          .sortBy('createdAt', 'desc')
+          .fetch()
+
+        const tags = await $content('tags', params.slug)
+          .only(['name', 'type', 'slug'])
+          .sortBy('createdAt', 'asc')
+          .fetch()
 
         return {
-            articles
+            articles,
+            tags
         }
-    },
-
-    data () {
-      return {
-        formula: '$$\\lambda x . P(x) \\land Q(x, y)$$'
-      }
     }
 }
-
 </script>
 
 

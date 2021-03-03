@@ -1,8 +1,8 @@
 ---
 title: Testing a new blog...
 description: This is a test description, which will appear on the home page.
-date: 2021-02-25
 img: https://i.imgur.com/pP3TT1h.jpg
+tags:
 ---
 
 # Introduction
