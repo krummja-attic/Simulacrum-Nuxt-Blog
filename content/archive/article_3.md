@@ -9,6 +9,8 @@ tags:
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam cursus massa ac libero tempus lobortis. Morbi aliquet felis in tellus dignissim, ut auctor libero porttitor. Praesent eu ligula elit.
 
+<D3Diagram></D3Diagram>
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam cursus massa ac libero tempus lobortis. Morbi aliquet felis in tellus dignissim, ut auctor libero porttitor.[^1] Praesent eu ligula elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 <test-box>

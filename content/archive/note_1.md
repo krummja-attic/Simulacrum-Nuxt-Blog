@@ -1,6 +1,8 @@
 ---
 title: Matushansky (2019)
 description: Reading notes on Matushansky (2019). Her main claim is that the move to including a PredP functional category was a mistake, and that there is no clear evidence that unequivocally requires the presence of such a functional head in small clauses.
+tags:
+ - research
 ---
 
 # Overview

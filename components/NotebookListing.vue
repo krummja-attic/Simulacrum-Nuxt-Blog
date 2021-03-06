@@ -1,14 +1,15 @@
 <template>
     <ul class="flex flex-wrap">
-        <li v-for="note of notes"
-            :key="note.slug"
-            class="xs:w-full md:w-1/2 px-2 xs:mb-6 md:mb-12 article-card">
+        <li
+        v-for="note of notes"
+        :key="note.slug"
+        class="xs:w-full md:w-1/2 px-2 xs:mb-6 md:mb-12 article-card"
+        >
 
-            <NuxtLink :to="{ name: 'notebook-slug', params: { slug: note.slug } }" class="
-                flex
-                transition-shadow duration-150 ease-in-out
-                shadow-sm hover:shadow-md xxlmax:flex-col
-            ">
+            <NuxtLink
+            :to="{ name: 'notebook-slug', params: { slug: note.slug } }"
+            class="flex transition-shadow duration-150 ease-in-out shadow-sm hover:shadow-md xxlmax:flex-col"
+            >
 
                 <div class="desc-box p-5 px-5 flex flex-col">
                     <h2 class="text-lg font-bold">{{ note.title }}</h2>

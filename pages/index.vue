@@ -5,16 +5,20 @@
 
     <ArticleListing :articles="articles" />
 
+    <TagListing :tags="tags" />
+
   </div>
 </template>
 
 
 <script>
 import ArticleListing from '@/components/ArticleListing';
+import TagListing from '@/components/TagListing';
 
 export default {
     components: {
-      ArticleListing
+      ArticleListing,
+      TagListing
     },
 
     async asyncData({ $content, params })
@@ -25,7 +29,7 @@ export default {
           .fetch()
 
         const tags = await $content('tags', params.slug)
-          .only(['name', 'type', 'slug'])
+          .only(['name', 'slug'])
           .sortBy('createdAt', 'asc')
           .fetch()
 

@@ -1,26 +1,24 @@
 <template>
     <div>
-        <h1 class="mb-6">Notebook</h1>
+        <h1 class="mb-6">Devlogs</h1>
 
-        <NotebookListing :notes="this.notes" :tags="this.tags" />
-
-        <TagListing :tags="this.tags" />
+        <DevlogListing :logs="this.logs" :tags="this.tags" />
 
     </div>
 </template>
 
 <script>
-import NotebookListing from '@/components/NotebookListing';
+import DevlogListing from '@/components/DevlogListing';
 import TagListing from '@/components/TagListing';
 
 export default {
     components: {
-        NotebookListing,
+        DevlogListing,
         TagListing
     },
     async asyncData({ $content, params })
     {
-        const notes = await $content('notes', params.slug)
+        const logs = await $content('logs', params.slug)
         .only(['title', 'description', 'createdAt', 'img', 'slug'])
         .sortBy('createdAt')
         .fetch()
@@ -31,7 +29,7 @@ export default {
             .fetch()
 
         return {
-            notes,
+            logs,
             tags
         }
     }

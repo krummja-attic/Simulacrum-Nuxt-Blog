@@ -15,8 +15,9 @@
         <NuxtLink
             class="tab"
             active-class="tab-primary"
-            :class="{'tab-secondary': this.$route.path != '/gamedev'}"
-            to="/gamedev">Devlog</NuxtLink>
+            :class="{'tab-secondary': this.$route.path != '/devlogIndex',
+                     'tab-ternary': this.$route.path == '/devlog/' + this.$route.params.slug }"
+            to="/devlogIndex">Devlog</NuxtLink>
     </div>
 </template>
 

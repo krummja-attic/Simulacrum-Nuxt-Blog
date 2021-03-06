@@ -7,6 +7,8 @@
             xs:mb-6 md:mb-12
         ">
 
+            <TagList :content="note" :tags="tags" />
+
             <div class="note-header">
 
                 <h1 class="
@@ -56,11 +58,26 @@
 
 
 <script>
+import TagList from '@/components/TagList'
+
 export default {
+    components: {
+        TagList
+    },
+
     async asyncData ({ $content, params }) {
         const note = await $content('notes', params.slug).fetch();
-        return { note };
+
+        const tagsList = await $content('tags')
+            .only(['name', 'slug'])
+            .where({ name: { $containsAny: note.tags } })
+            .fetch()
+
+        const tags = Object.assign({}, ...tagsList.map((s) => ({ [s.name]: s })))
+
+        return { note, tags };
     },
+
     methods: {
         formatDate(date)
         {

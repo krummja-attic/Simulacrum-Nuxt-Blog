@@ -1,20 +1,21 @@
 <template>
     <ul class="flex flex-wrap">
 
-        <li v-for="article of articles"
-            :key="article.slug"
-            class="xs:w-full md:w-1/2 px-2 xs:mb-6 md:mb-12 article-card">
+        <li
+        v-for="article of articles"
+        :key="article.slug"
+        class="xs:w-full md:w-1/2 px-2 xs:mb-6 md:mb-12 article-card"
+        >
 
-            <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }" class="
-                flex
-                transition-shadow duration-150 ease-in-out
-                shadow-sm hover:shadow-md xxlmax:flex-col
-            ">
+            <NuxtLink
+            :to="{ name: 'blog-slug', params: { slug: article.slug } }"
+            class="flex transition-shadow duration-150 ease-in-out shadow-sm hover:shadow-md xxlmax:flex-col"
+            >
 
                 <img
-                    v-if="article.img"
-                    class="h-48 xxlmin:w-1/2 xxlmax:w-full object-cover"
-                    :src="article.img"
+                v-if="article.img"
+                class="h-48 xxlmin:w-1/2 xxlmax:w-full object-cover"
+                :src="article.img"
                 />
 
                 <div class="desc-box p-5 flex flex-col xxlmin:w-1/2 xxlmax:w-full">
