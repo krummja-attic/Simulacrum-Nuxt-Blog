@@ -97,6 +97,13 @@ export default {
     text-align: justify;
 }
 
+.nuxt-content a {
+  color: rgba(75, 60, 90, 1.0);
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: inset 0 -.125rem 0 0 #fff,inset 0 -.375rem 0 0 rgba(115, 90, 140, 0.25);
+}
+
 .nuxt-content h1 {
     margin-top: 30px;
     font-weight: bold;
@@ -144,16 +151,22 @@ export default {
 
 .nuxt-content ol {
     margin: 32px 0;
+    padding: 0 60px;
     list-style-type: decimal;
 }
 
 .nuxt-content ul {
     margin: 32px 0;
+    padding: 0 60px;
     list-style-type: circle;
 }
 
+.nuxt-content li {
+    padding-left: 10px;
+}
+
 .dropcap {
-    color: hsl(295, 36%, 45%);
+    color: rgba(75, 60, 90, 0.80);
     float: left;
     font-size: 75px;
     line-height: 60px;
