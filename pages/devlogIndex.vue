@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1 class="mb-6">Devlogs</h1>
+        <h1 class="mb-6">Development Logs</h1>
 
         <DevlogListing :logs="this.logs" :tags="this.tags" />
 
