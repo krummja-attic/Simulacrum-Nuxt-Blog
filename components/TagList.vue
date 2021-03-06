@@ -8,7 +8,7 @@
                     px-2 py-1
                     rounded-full border border-light-border dark:border-dark-border
                     transition-colors duration-300 ease-linear
-                    truncate uppercase tracking-wider font-medium text-ss
+                    truncate tracking-wider font-medium text-ss
                 ">
                     {{ tags[tag].name }}
                 </span>

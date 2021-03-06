@@ -1,6 +1,6 @@
 <template>
     <div class="flex lg:h-100 w-100 xs:flex-col lg:flex-col">
-        <h1 class="text-4xl mb-10 font-bold">#{{ tag.name }}</h1>
+        <h1 class="text-4xl mb-10 font-bold"><span class="accent">{{ tag.name }}</span></h1>
 
         <h3 class="mb-4 font-bold text-3xl">Blog posts</h3>
 
@@ -92,8 +92,12 @@ export default {
 }
 </script>
 
-
 <style scoped>
+.accent {
+    /* color: rgba(100, 80, 130, 1.0); */
+    color: rgba(115, 90, 140, 1.0);
+}
+
 .article-card {
     border-radius: 8px;
     text-align: justify;

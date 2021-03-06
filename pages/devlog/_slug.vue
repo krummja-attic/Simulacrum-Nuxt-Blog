@@ -3,8 +3,6 @@
 
     <div class="log xs:w-full md:w-full px-2 xs:mb-6 md:mb-12">
 
-      <TagList :content="log" :tags="tags" />
-
       <div class="log-header">
         <h1 class="log-title tracking-wide font-bold xs:text-2xl md:text-3xl xs:my-4 md:my-8">
           {{ log.title }}
@@ -24,24 +22,12 @@
 </template>
 
 <script>
-import TagList from '@/components/TagList'
-
 export default {
-  components: {
-    TagList
-  },
 
   async asyncData ({ $content, params }) {
     const log = await $content('logs', params.slug).fetch();
 
-    const tagsList = await $content('tags')
-      .only(['name', 'slug'])
-      .where({ name: { $containsAny: log.tags } })
-      .fetch()
-
-    const tags = Object.assign({}, ...tagsList.map((s) => ({ [s.name]: s })))
-
-    return { log, tags };
+    return { log };
   },
 
   methods: {
@@ -57,11 +43,6 @@ export default {
 <style>
 .log-header {
   text-align: center;
-}
-
-.abstract {
-  text-align: justify;
-  font-style: italic;
 }
 
 .log {

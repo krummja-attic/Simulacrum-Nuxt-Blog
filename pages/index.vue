@@ -10,7 +10,6 @@
   </div>
 </template>
 
-
 <script>
 import ArticleListing from '@/components/ArticleListing';
 import TagListing from '@/components/TagListing';
@@ -40,7 +39,6 @@ export default {
     }
 }
 </script>
-
 
 <style scoped>
 h1 {
