@@ -7,9 +7,7 @@ tags:
  - writing
 ---
 
-Hello there, and welcome!
-
-This is the first post in a series of blog posts aimed at exploring writing-related topics for UGA's LING3150W. Normally, I would be supporting the course face-to-face, but given the current SARS-CoV-2 pandemic, I wanted to find a way of reliably delivering writing-related content to students of the courses I support without a physical presence on campus.
+<span class="dropcap">H</span>ello there, and welcome! This is the first post in a series of blog posts aimed at exploring writing-related topics for UGA's LING3150W. Normally, I would be supporting the course face-to-face, but given the current SARS-CoV-2 pandemic, I wanted to find a way of reliably delivering writing-related content to students of the courses I support without a physical presence on campus.
 
 So, from here through the remainder of the semester, I will be composing weekly blog posts under the series title *Lexical Selections*. The central focus of this series is to address issues in such areas as writing for the sciences, interdisciplinary writing, and writing for linguistics. As much as I am in my current field because I love the research and scholarship associated with it, I have come to enjoy the process of planning, composing, and sharing the results of my work. I won't delve too much into my philosophy on writing right now, but rest assured that we will get to some of the interesting kernels of what motivates us to write, how we write, and who we write for in the coming weeks - mark my words!
 

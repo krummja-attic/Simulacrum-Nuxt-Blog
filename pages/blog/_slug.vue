@@ -1,54 +1,34 @@
 <template>
   <div>
+    <div class="article xs:w-full md:w-full px-2 xs:mb-6 md:mb-12">
 
-    <div class="
-    article
-    xs:w-full md:w-full px-2
-    xs:mb-6 md:mb-12
-    ">
+      <TagList :content="article" :tags="tags" />
 
-        <TagList :content="article" :tags="tags" />
-
-        <div class="article-header">
-
-            <h1 class="
-                article-title
-                tracking-wide font-bold
-                xs:text-2xl md:text-3xl
-                xs:my-4 md:my-8
-            ">
-                {{ article.title }}
-            </h1>
-
-            <div class="xs:my-2 md:my-8">
-                {{ formatDate(article.createdAt) }}
-            </div>
-
-        </div>
-
-        <div class="
-        article-body
-        sm:mx-1 md:mx-16 lg:mx-32 xl:mx-64
-        sm:text-sm md:text-base lg:text-lg xl:text-xl
-        ">
-
-          <div class="
-          abstract
-          sm:mx-8 my-10
-          md:mx-8 my-10
-          lg:mx-16 my-10
-          xl:mx-24 my-10
-          ">
-            <hr class="mb-2"/>
-              {{ article.description }}
-            <hr class="mt-2"/>
-          </div>
-
-          <nuxt-content :document="article" />
-
+      <div class="article-header">
+        <h1 class="article-title xs:text-2xl md:text-3xl xs:my-4 md:my-8">
+          {{ article.title }}
+        </h1>
+        <div class="xs:my-2 md:my-8">
+          {{ formatDate(article.createdAt) }}
         </div>
       </div>
 
+      <div class="article-body
+        sm:mx-1    md:mx-16     lg:mx-32    xl:mx-64
+        sm:text-sm md:text-base lg:text-lg  xl:text-xl
+      ">
+
+        <div class="abstract my-10 sm:mx-8 md:mx-8 lg:mx-16 xl:mx-24">
+          <hr class="mb-2" />
+            {{ article.description }}
+          <hr class="mt-2" />
+        </div>
+
+        <nuxt-content :document="article" />
+
+      </div>
+
+    </div>
   </div>
 </template>
 
@@ -86,6 +66,8 @@ export default {
 <style>
 .article-header {
     text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.025em;
 }
 
 .abstract {
@@ -97,56 +79,47 @@ export default {
     text-align: justify;
 }
 
+.article-title {
+    color: rgba(75, 60, 90, 0.8);
+}
+
 .nuxt-content a {
   color: rgba(75, 60, 90, 1.0);
   text-decoration: none;
   font-weight: 600;
-  box-shadow: inset 0 -.125rem 0 0 #fff,inset 0 -.375rem 0 0 rgba(115, 90, 140, 0.25);
+  box-shadow: inset 0 -.225rem 0 0 #f7f3ef,inset 0 -.475rem 0 0 rgba(115, 90, 140, 0.25);
 }
 
 .nuxt-content h1 {
+    color: rgba(75, 60, 90, 0.8);
     margin-top: 30px;
     font-weight: bold;
     font-size: 28px;
 }
 
 .nuxt-content h2 {
+    color: rgba(75, 60, 90, 0.8);
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.nuxt-content h3 {
+    color: rgba(75, 60, 90, 0.8);
     margin-top: 30px;
     font-weight: bold;
     font-size: 22px;
 }
 
-.nuxt-content h3 {
-    margin-top: 30px;
-    font-style: italic;
-    font-size: 20px;
+.nuxt-content h4 {
+  color: rgba(75, 60, 90, 0.8);
+  margin-top: 30px;
+  font-style: italic;
+  font-size: 20px;
 }
 
 .nuxt-content p {
     margin: 16px 0;
-}
-
-.nuxt-content .footnote-ref {
-    color: red;
-}
-
-.nuxt-content .footnotes {
-    margin-top: 40px;
-}
-
-.nuxt-content .footnotes::before {
-    content: "References";
-    font-weight: bold;
-    font-size: 28px;
-}
-
-.nuxt-content .footnote-backref {
-    margin-left: 6px;
-    color: red;
-}
-
-.nuxt-content .footnotes li {
-    margin-top: 8px;
 }
 
 .nuxt-content ol {
@@ -173,5 +146,28 @@ export default {
     padding-top: 4px;
     padding-right: 8px;
     padding-left: 3px;
+}
+
+.nuxt-content .footnote-ref {
+    color: red;
+}
+
+.nuxt-content .footnotes {
+    margin-top: 40px;
+}
+
+.nuxt-content .footnotes::before {
+    content: "References";
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.nuxt-content .footnote-backref {
+    margin-left: 6px;
+    color: red;
+}
+
+.nuxt-content .footnotes li {
+    margin-top: 8px;
 }
 </style>

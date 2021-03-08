@@ -3,7 +3,7 @@
     <li
       v-for="log of logs"
       :key="log.slug"
-      class="xs:w-full md:w-1/2 px-2 xs:mb-6 md:mb-12 article-card"
+      class="xs:w-full md:w-1/3 px-2 xs:mb-6 md:mb-12 article-card"
     >
 
       <NuxtLink
@@ -11,8 +11,11 @@
         class="flex transition-shadow duration-150 ease-in-out shadow-sm hover:shadow-md xxlmax:flex-col"
       >
 
-        <div class="desc-box p-5 px-5 flex flex-col">
-          <h2 class="text-lg font-bold">{{ log.title }}</h2>
+        <div class="p-5 px-5 flex flex-col w-full">
+          <div class="flex flex-row justify-between">
+            <h2 class="text-lg font-bold">{{ log.title }}</h2>
+            <h2 class="text-lg font-bold place-self-auto">{{ log.project }}</h2>
+          </div>
           <p class="date">{{ formatDate(log.createdAt) }}</p>
           <p class="desc fade">{{ log.description }}</p>
         </div>
@@ -56,7 +59,7 @@ export default {
 }
 
 .article-card:hover h2 {
-  color: rgba(200, 0, 0, 0.9)
+  color: rgba(75, 60, 90, 0.8);
 }
 
 .date {
@@ -74,7 +77,7 @@ export default {
 
 .fade {
   position: relative;
-  height: 6em;
+  height: 3.2em;
 }
 
 .fade:after {

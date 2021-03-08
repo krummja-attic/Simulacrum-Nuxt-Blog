@@ -40,6 +40,7 @@ export default {
 
 <style scoped>
 h1 {
+    color: rgba(75, 60, 90, 0.8);
     padding: 10px 0;
     font-size: 1.8rem;
     font-weight: bold;

@@ -1,24 +1,16 @@
 <template>
   <div class="container mx-auto bg-transparent">
-
     <div>
-
       <Header />
-
       <TabBar />
-
       <div class="content-wrapper shadow-lg rounded">
-
         <Nuxt />
-
       </div>
-
-      <Footer />
-
+      <div class="colorpop rounded-b"></div>
+        <Footer />
     </div>
   </div>
 </template>
-
 
 <script>
 import Header from '@/components/Header'
@@ -33,7 +25,6 @@ export default {
   }
 }
 </script>
-
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
@@ -69,32 +60,11 @@ html {
   margin: 0;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+.colorpop {
+    position: relative;
+    height: 20px;
+    width: 100%;
+    bottom: 20px;
+    background-color: rgba(75, 60, 90, 0.8);
 }
 </style>

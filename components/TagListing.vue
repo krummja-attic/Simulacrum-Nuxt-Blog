@@ -9,9 +9,9 @@
             >
                 <NuxtLink :to="`/tag/${tag.slug}`" class="">
                     <span
-                    class="
-                    px-2 py-1
+                    class="px-2 py-1
                     rounded-full border border-light-border dark:border-dark-border
+                    hover:border-purple-700
                     transition-colors duration-300 ease-linear
                     truncate tracking-wider font-medium text-ss
                     ">
@@ -32,10 +32,7 @@ export default {
 </script>
 
 <style scoped>
-/* .tag {
-    color: rgba(75, 60, 90, 1.0);
-    text-decoration: none;
-    font-weight: 600;
-    box-shadow: inset 0 -.125em 0 0 #fff,inset 0 -.375em 0 0 rgba(115, 90, 140, 0.45);
-} */
+h3 {
+    color: rgba(75, 60, 90, 0.8);
+}
 </style>

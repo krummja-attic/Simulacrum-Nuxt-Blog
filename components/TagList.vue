@@ -3,10 +3,9 @@
         <span v-for="(tag, id) in content.tags" :key="id">
             <NuxtLink :to="`/tag/${tags[tag].slug}`">
                 <span
-                    class="
-                    tag-pill
-                    px-2 py-1
+                    class="px-2 py-1
                     rounded-full border border-light-border dark:border-dark-border
+                    hover:border-purple-700
                     transition-colors duration-300 ease-linear
                     truncate tracking-wider font-medium text-ss
                 ">

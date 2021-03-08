@@ -56,7 +56,7 @@ export default {
 }
 
 .article-card:hover h2 {
-    color: rgba(200, 0, 0, 0.9)
+    color: rgba(75, 60, 90, 0.8);
 }
 
 .date {

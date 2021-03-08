@@ -26,9 +26,47 @@ Alright, so that was a bit rough. If you had little or no context for what the p
 Thankfully, each of these has a fairly straightforward answer. Issues (1) and (4) are just definitional, and can benefit from small adjustments to how they are brought up in the prose. Issue (2) is similar in that it is just a definitional issue; we can clarify by using some more precise terminology. Finally, issues (3) and (5) benefit from being subject to some very standard stylistic guidelines for the presentation of linguistic data. Let's clean up the paragraph, and then we can turn to discussing what specific changes we made.
 
 <p style="padding: 0 8%; margin: 40px 0;">
-    <span style="color: red;">In everyday speech,</span> German speakers typically do not use the <span style="color: red;">simple</span> past tense <span style="color: red;">(like English <i>sat</i>, <i>played</i>, or <i>sang</i>)</span>. Instead, they use the <span style="color: red;">auxiliary</span> verbs <span style="color: red;"><i>sein</i> 'to be'</span> and <span style="color: red;"><i>haben</i> 'to have'</span>. In English, this would be like using the perfect <span style="color: red;">aspect</span>, which is different from tense. <span style="color: red;">If a speaker were to say "ich habe den Film gesehen",</span> this can be translated as <span style="color: red;">'I have seen the movie'</span> or <span style="color: red;">'I saw the movie'</span>. <span style="color: red;">Note the following additional examples:</span><br/><br/>
-    <gloss style="color:red;" exno="1" gla="Sie sind gelaufen" glb="they have run" glft="They have run./They ran."></gloss>
-    <gloss style="color:red;" exno="2" gla="Du has blumen gepflückt" glb="you have flowers picked" glft="You have picked flowers./You picked flowers."></gloss>
+<span style="color: red;">In everyday speech,</span> German speakers typically do not use the <span style="color: red;">simple</span> past tense <span style="color: red;">(like English <i>sat</i>, <i>played</i>, or <i>sang</i>)</span>. Instead, they use the <span style="color: red;">auxiliary</span> verbs <span style="color: red;"><i>sein</i> 'to be'</span> and <span style="color: red;"><i>haben</i> 'to have'</span>. In English, this would be like using the perfect <span style="color: red;">aspect</span>, which is different from tense. <span style="color: red;">If a speaker were to say "ich habe den Film gesehen",</span> this can be translated as <span style="color: red;">'I have seen the movie'</span> or <span style="color: red;">'I saw the movie'</span>. <span style="color: red;">Note the following additional examples:</span><br/><br/>
+
+<div style="color: red; padding: 0 8%; margin: -40px 40px 40px 0;">
+    <table>
+        <tr>
+            <td style="padding-right: 8px;">(1)</td>
+            <td style="padding-right: 8px;">Sie</td>
+            <td style="padding-right: 8px;">sind</td>
+            <td style="padding-right: 8px;">gelaufen</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="padding-right: 8px;">they</td>
+            <td style="padding-right: 8px;">have</td>
+            <td style="padding-right: 8px;">run</td>
+        </tr>
+    </table>
+    <span style="padding-left: 32px;">'They have run./They ran.'</span>
+</div>
+
+
+<div style="color: red; padding: 0 8%; margin: -10px 40px 40px 0;">
+    <table>
+        <tr>
+            <td style="padding-right: 8px;">(2)</td>
+            <td style="padding-right: 8px;">Du</td>
+            <td style="padding-right: 8px;">hast</td>
+            <td style="padding-right: 8px;">Blumen</td>
+            <td style="padding-right: 8px;">gepflückt</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="padding-right: 8px;">you</td>
+            <td style="padding-right: 8px;">have</td>
+            <td style="padding-right: 8px;">flowers</td>
+            <td style="padding-right: 8px;">picked</td>
+        </tr>
+    </table>
+    <span style="padding-left: 32px;">'You have picked flowers./You picked flowers.'</span>
+</div>
+
 </p>
 
 Let's run down the list here.
