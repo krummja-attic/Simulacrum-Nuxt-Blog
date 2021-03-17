@@ -27,6 +27,10 @@ export default {
       {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css2?family=Caveat&display=swap'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Pangolin&display=swap'
       }
     ],
     script: [
@@ -36,15 +40,19 @@ export default {
       { src: '//unpkg.com/nomnoml/dist/nomnoml.js' }
     ]
   },
-  css: [],
+  css: ['~assets/scss/colors.scss'],
   plugins: [],
   components: true,
   buildModules: [
     '@nuxtjs/tailwindcss',
   ],
   modules: [
-      '@nuxt/content'
+      '@nuxt/content',
+      '@nuxtjs/style-resources'
   ],
+  styleResources: {
+    scss: ['./assets/scss/*.scss']
+  },
   content: {
     markdown: {
       remarkPlugins: ['remark-footnotes']

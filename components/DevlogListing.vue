@@ -3,7 +3,7 @@
     <li
       v-for="log of logs"
       :key="log.slug"
-      class="xs:w-full md:w-1/3 px-2 xs:mb-6 md:mb-12 article-card"
+      class="w-1/2 xs:w-full sm:w-1/2 md:w-1/2 lg:w-1/2 xl:w-1/3 px-2 xs:mb-6 md:mb-12 article-card"
     >
 
       <NuxtLink
@@ -12,7 +12,7 @@
       >
 
         <div class="p-5 px-5 flex flex-col w-full">
-          <div class="flex flex-row justify-between">
+          <div class="flex justify-between xs:flex-col sm:flex-col md:flex-row lg:flex-row">
             <h2 class="text-lg font-bold">{{ log.title }}</h2>
             <h2 class="text-lg font-bold place-self-auto">{{ log.project }}</h2>
           </div>
@@ -25,7 +25,6 @@
     </li>
   </ul>
 </template>
-
 
 <script>
 export default {
@@ -43,23 +42,22 @@ export default {
 }
 </script>
 
-
-<style scoped>
+<style lang="scss" scoped>
 .article-card {
   border-radius: 8px;
   text-align: justify;
-}
 
-.article-card a {
-  border-radius: 8px;
-}
+  a {
+    border-radius: 8px;
+  }
 
-.article-card img div {
-  border-radius: 8px 0 0 8px;
-}
+  img div {
+    border-radius: 8px 0 0 8px;
+  }
 
-.article-card:hover h2 {
-  color: rgba(75, 60, 90, 0.8);
+  &:hover h2 {
+    color: rgba(75, 60, 90, 0.8);
+  }
 }
 
 .date {
@@ -78,16 +76,21 @@ export default {
 .fade {
   position: relative;
   height: 3.2em;
-}
 
-.fade:after {
-  content: "";
-  text-align: right;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 40%;
-  height: 1.2em;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(247, 243, 239, 1) 50%);
+  &::after {
+    content: "";
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40%;
+    height: 1.2em;
+    background:
+      linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0),
+        rgba(247, 243, 239, 1) 50%
+      );
+  }
 }
 </style>

@@ -1,6 +1,8 @@
 <template>
-  <div :style="addJitter" :id="this.uuid" class="container shadow-md">
-    <slot></slot>
+  <div :style="addJitter" :id="this.uuid" class="wrapper shadow-md invisible xl:visible xl:w-0">
+    <div class="sticky">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
@@ -27,20 +29,49 @@ export default {
 }
 </script>
 
-<style scss scoped>
-.container {
-  font-family: 'Caveat', sans-serif;
-  font-size: 1.5rem;
+<style lang="scss" scoped>
+.wrapper {
+  @media screen and (min-width: 1280px) {
+    min-width: 250px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 0;
+  }
+
+  @media screen and (min-width: 640px) {
+    width: 0;
+  }
+
+  @media screen and (min-width: 320px) {
+    width: 0;
+  }
+
+  max-height: 250px;
+  font-family: 'Pangolin', cursive;
+  font-weight: 400;
+  // font-size: 1.6rem;
   z-index: 1;
   float: right;
   position: absolute;
   left: 100%;
-  width: 200px;
-  min-height: 200px;
-  height: auto;
   padding: 10px;
   margin-left: 10px;
-  color: #333333;
+  color: #333;
   background-color: #ffeca9;
+}
+
+.sticky {
+  width: auto;
+
+  &::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
 }
 </style>

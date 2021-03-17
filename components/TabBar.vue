@@ -3,9 +3,14 @@
         <NuxtLink
             class="tab"
             active-class="tab-primary"
-            :class="{'tab-secondary': this.$route.path != '/',
+            :class="{'tab-secondary': this.$route.path != '/'}"
+            to="/">Home</NuxtLink>
+        <NuxtLink
+            class="tab"
+            active-class="tab-primary"
+            :class="{'tab-secondary': this.$route.path != '/blogIndex',
                      'tab-ternary': this.$route.path == '/blog/' + this.$route.params.slug }"
-            to="/">Blog</NuxtLink>
+            to="/blogIndex">Blog</NuxtLink>
         <NuxtLink
             class="tab"
             active-class="tab-primary"
@@ -24,28 +29,28 @@
 
 <style scoped>
 .tab-primary {
-    font-weight: bold;
-    color: #5e5e5e;
-    background-color: #F7F3EF;
+  font-weight: bold;
+  color: #5e5e5e;
+  background-color: #F7F3EF;
 }
 
 .tab-secondary {
-    font-weight: normal;
-    color: #5e5e5e;
-    background-color: #c9c2b7;
+  font-weight: normal;
+  color: #5e5e5e;
+  background-color: #c9c2b7;
 }
 
 .tab-ternary {
-    font-weight: bold;
-    color: #5e5e5e;
-    background-color: #F7F3EF;
+  font-weight: bold;
+  color: #5e5e5e;
+  background-color: #F7F3EF;
 }
 
 .tab {
-    padding-top: 2px;
-    width: 120px;
-    height: 30px;
-    border-radius: 10px 10px 0 0;
-    font-size: 1.0rem;
+  padding-top: 2px;
+  width: 120px;
+  height: 30px;
+  border-radius: 10px 10px 0 0;
+  font-size: 1rem;
 }
 </style>

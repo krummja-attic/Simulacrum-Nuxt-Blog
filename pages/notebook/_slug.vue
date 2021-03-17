@@ -77,15 +77,15 @@ export default {
 
 <style>
 .note-header {
-    text-align: center;
+  text-align: center;
 }
 
 .abstract {
-    text-align: justify;
-    font-style: italic;
+  text-align: justify;
+  font-style: italic;
 }
 
 .note {
-    text-align: justify;
+  text-align: justify;
 }
 </style>

@@ -1,14 +1,12 @@
 <template>
   <div class="container mx-auto bg-transparent">
-    <div>
-      <Header />
-      <TabBar />
-      <div class="content-wrapper shadow-lg rounded">
-        <Nuxt />
-      </div>
-      <div class="colorpop rounded-b"></div>
-        <Footer />
+    <Header />
+    <TabBar />
+    <div class="content-wrapper shadow-lg rounded">
+      <Nuxt />
     </div>
+    <div class="colorpop rounded-b"></div>
+    <Footer />
   </div>
 </template>
 
@@ -26,15 +24,15 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
 
 html {
   font-family: 'PT Serif', Georgia, Times, "Times New Roman", serif;
-  background-color: #ede5d9;
-  color: #404040;
+  background-color: $creme;
+  color: $nero;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -44,15 +42,6 @@ html {
   box-sizing: border-box;
 }
 
-.container {
-  text-align: center;
-}
-
-.content-wrapper {
-  padding: 40px 30px;
-  background-color: rgba(247, 243, 239, 1);
-}
-
 *,
 *::before,
 *::after {
@@ -60,11 +49,143 @@ html {
   margin: 0;
 }
 
+.container {
+  height: 100%;
+  text-align: center;
+}
+
+.content-wrapper {
+  height: 100%;
+  padding: 40px 30px;
+  background-color: $papier;
+}
+
 .colorpop {
-    position: relative;
-    height: 20px;
-    width: 100%;
-    bottom: 20px;
-    background-color: rgba(75, 60, 90, 0.8);
+  position: relative;
+  height: 20px;
+  width: 100%;
+  bottom: 20px;
+  background-color: $accent-purple-2;
+}
+
+.nuxt-content {
+  position: relative;
+
+  a {
+    color: $accent-purple-1;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow:
+      inset 0 -0.225rem 0 0 $papier,
+      inset 0 -0.475rem 0 0 $accent-purple-3;
+  }
+
+  h1 {
+    color: $accent-purple-2;
+    font-weight: bold;
+    font-size: 28px;
+  }
+
+  h2 {
+    color: $accent-purple-2;
+    padding-top: 30px;
+    font-weight: bold;
+    font-size: 28px;
+  }
+
+  h3 {
+    color: $accent-purple-2;
+    padding-top: 30px;
+    font-weight: bold;
+    font-size: 22px;
+  }
+
+  h4 {
+    color: $accent-purple-2;
+    margin-top: 30px;
+    font-style: italic;
+    font-size: 20px;
+  }
+
+  p {
+    margin: 16px 0;
+  }
+
+  ol {
+    margin: 32px 0;
+    padding: 0 60px;
+    list-style-type: decimal;
+  }
+
+  ul {
+    margin: 32px 0;
+    padding: 0 60px;
+    list-style-type: circle;
+  }
+
+  li {
+    padding-left: 10px;
+  }
+
+  pre {
+    margin: 40px 0;
+    border-radius: 8px;
+    box-shadow: inset 0 0 10px $shade;
+    background: $creme;
+
+    code {
+      font-size: 12pt;
+      border-radius: 0;
+      padding: 0;
+      box-shadow: none;
+      background: none;
+
+      span.token.operator {
+        background: none;
+      }
+    }
+  }
+
+  .dropcap {
+    color: $accent-purple-1;
+    float: left;
+    font-size: 75px;
+    line-height: 60px;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 3px;
+  }
+
+  .footnotes {
+    margin-top: 150px;
+
+    li {
+      margin-top: 8px;
+    }
+
+    &::before {
+      content: "References";
+      color: $accent-purple-2;
+      font-weight: bold;
+      font-size: 28px;
+    }
+  }
+
+  .footnote-ref {
+    color: $accent-purple-1;
+  }
+
+  .footnote-backref {
+    margin-left: 6px;
+    color: $accent-purple-1;
+  }
+}
+
+code {
+  padding: 0 5px;
+  background: $creme;
+  border-radius: 8px;
+  box-shadow: inset 0 0 10px $shade;
+  font-size: 12pt;
 }
 </style>

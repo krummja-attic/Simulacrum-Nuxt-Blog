@@ -31,7 +31,6 @@
     </ul>
 </template>
 
-
 <script>
 export default {
     props: {
@@ -48,23 +47,24 @@ export default {
 }
 </script>
 
-
-<style scoped>
+<style lang="scss" scoped>
 .article-card {
     border-radius: 8px;
     text-align: justify;
-}
 
-.article-card a {
+  a {
     border-radius: 8px;
-}
+  }
 
-.article-card img div {
-    border-radius: 8px 0 0 8px;
-}
+  img {
+    div {
+      border-radius: 8px 0 0 8px;
+    }
+  }
 
-.article-card:hover h2 {
-    color: rgba(75, 60, 90, 0.8);
+  &:hover h2 {
+    color: $accent-purple-2;
+  }
 }
 
 .date {
