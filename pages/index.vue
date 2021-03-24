@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    <h1>About Me</h1>
+    <h1>Under Construction!</h1>
 
-    <h1>Curriculum Vitae</h1>
+    <p>Please check out the rest of the site in the meantime. :)</p>
   </div>
 </template>
 

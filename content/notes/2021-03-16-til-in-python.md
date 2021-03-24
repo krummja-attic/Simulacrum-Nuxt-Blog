@@ -6,6 +6,7 @@ tags:
  - python
  - numpy
  - gamedev
+ - roguelikes
 ---
 
 In roguelike games, it is usually the case that we want to use randomization to scatter assets around a level or area during generation. This can be items, monsters, or even the distribution of the tiles themselves. For my own projects, I like to generate levels by first laying down a base tile, either the most general "floor" or "wall" type depending on if it's an open area or an indoor space. Once the base tile is down, I will often have several steps of walking through the tilemap and randomly placing some other asset. For instance, if my area is an open field, I might randomly place one or two variants of grass tiles to give the map some texture.
@@ -33,18 +34,18 @@ In discussing procgen methods with some folks over at the RoguelikeDev Discord, 
 
 ```python
 def rng_selection(
-		tile_space: TileSpace, 
-		mask_type: TileType, 
-		fill_type: TileType, 
+		tile_space: TileSpace,
+		mask_type: TileType,
+		fill_type: TileType,
 		asset_list: List[Tuple[int, TileType]]
 	) -> TileSpace:
 	selection_set = np.full(100, fill_value=fill_type)
-	
+
 	low = 0
 	for threshold, tile_type in asset_list:
 		selection_set[low:threshold] = tile_type
 		low = threshold
-		
+
 	mask = (tile_space == mask_type)
 	rng_samples = np.random.randint(low=0, high=100, size=(64, 64))
 
@@ -69,25 +70,41 @@ rng_selection(
 
 Now *that* is hot. Let's break down what's happening here.
 
-In the `rng_selection` function, I pass in the tilemap (`tile_space`) to work with. I also pass in a `mask_type`, which is the tile type we're saying is okay to replace; a `fill_type`, which is the tile type we'll use to fill anything that doesn't get covered during the randomization process; and finally an `asset_list`, which is a list of tuples that assign a high threshold to a tile type. That is, just like in our clunkier example we assigned tile types to ranges, like 10:20 for `Tiles.grass()`, we're providing the upper bound of each threshold in our asset listing. That would be the 20, in the relevant example.
+In the `rng_selection` function, I pass in the tilemap (`tile_space`) to work with. I also pass in a `mask_type`, which is the tile type we're saying is okay to replace; a `fill_type`, which is the tile type we'll use to fill anything that doesn't get covered during the randomization process; and finally an `asset_list`, which is a list of tuples that assign a high threshold to a tile type. That is, just like in our clunkier example we assigned tile types to ranges, like `10:20` for `Tiles.grass()`, we're providing the upper bound of each threshold in our asset listing. That would be the `20`, in the relevant example.
 
 The reason we pass in just the upper bound is because we're going to be algorithmically setting the lower bound inside the randomization function. Alright, so let's check out what's happening there.
 
 ```python
 	selection_set = np.full(100, fill_value=fill_type)
+```
 
+First, we set up a NumPy array to hold our selection ranges. We initialize it with a fill type, in this case the `Tiles.dirt_2` tile type.
+
+<img style="padding: 20px 0;" src="/rng_selections_1.svg">
+
+Next, we need to iterate through our asset list. On each iteration we want to take the upper bound of the previous asset and set that as our new `low` value.
+
+```python
 	low = 0
 	for threshold, tile_type in asset_list:
 		selection_set[low:threshold] = tile_type
 		low = threshold
 ```
 
-First, we're going to 
+<img style="padding: 20px 0;" src="/rng_selections_2.svg">
 
-```python	
+<img style="padding: 20px 0;" src="/rng_selections_3.svg">
+
+<img style="padding: 20px 0;" src="/rng_selections_4.svg">
+
+Once our selection array is initialized, we exploit NumPy's ability to use arrays as masks to walk through our tilespace and, for every cell we find that is currently set to `Tiles.unformed()`, we apply our `selection_set` to that cell. I like to think of this sort of like how a slot machine works, where you pull a lever and a cylinder with a set of possible outcomes spins until it comes to a rest on a final value. Applying the `selection_set` amounts to masking it with a separate array from NumPy's `random` module; we can roll a value between 0 and 100 (or however big our `selection_set` is) across an array that matches the dimensions of our input array.
+
+```python
 	mask = (tile_space == mask_type)
 	rng_samples = np.random.randint(low=0, high=100, size=(64, 64))
 
 	np.putmask(tile_space, mask, selection_set[rng_samples])
 	return tile_space
 ```
+
+The [putmask](https://numpy.org/doc/stable/reference/generated/numpy.putmask.html) method is very useful, and I recommend reading up on it! It has tons of applications for roguelike games.
