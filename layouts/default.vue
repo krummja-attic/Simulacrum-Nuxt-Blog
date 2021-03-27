@@ -16,6 +16,7 @@ import Footer from '@/components/Footer'
 import TabBar from '@/components/TabBar';
 
 export default {
+  name: 'default',
   components: {
     Header,
     Footer,
@@ -134,7 +135,6 @@ html {
     background: $creme;
 
     code {
-      font-size: 12pt;
       border-radius: 0;
       padding: 0;
       box-shadow: none;
@@ -181,11 +181,51 @@ html {
   }
 }
 
+@screen xs {
+  .nuxt-content pre code {
+    @apply text-xs;
+  }
+
+  .nuxt-content code {
+    @apply text-xs leading-3;
+  }
+}
+
+// @screen sm {
+//   .nuxt-content pre code {
+//     @apply text-sm;
+//   }
+
+//   .nuxt-content code {
+//     @apply text-sm;
+//   }
+// }
+
+@screen md {
+  .nuxt-content pre code {
+    @apply text-sm;
+  }
+
+  .nuxt-content code {
+    @apply text-sm leading-6;
+  }
+}
+
+// @screen lg {
+//   .nuxt-content pre code {
+//     @apply text-base;
+//   }
+
+//   .nuxt-content code {
+//     @apply text-base;
+//   }
+// }
+
 code {
   padding: 0 5px;
   background: $creme;
   border-radius: 8px;
   box-shadow: inset 0 0 10px $shade;
-  font-size: 12pt;
+  font-size: 11pt;
 }
 </style>

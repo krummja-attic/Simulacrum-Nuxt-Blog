@@ -14,6 +14,8 @@ export default {
 
 <style scoped>
 .copyright {
+    position: sticky;
+
     text-align: center;
     color: #909090;
 }

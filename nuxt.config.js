@@ -63,6 +63,9 @@ export default {
       config.node = {
         fs: 'empty'
       }
+    },
+    splitChunks: {
+      layouts: true
     }
   }
 }

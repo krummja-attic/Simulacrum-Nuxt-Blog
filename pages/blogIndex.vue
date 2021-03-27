@@ -4,7 +4,7 @@
 
     <ArticleListing :articles="articles" />
 
-    <TagListing :tags="tags" />
+    <!-- <TagListing :tags="tags" /> -->
   </div>
 </template>
 

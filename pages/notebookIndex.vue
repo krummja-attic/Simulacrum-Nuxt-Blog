@@ -4,7 +4,7 @@
 
         <NotebookListing :notes="this.notes" :tags="this.tags" />
 
-        <TagListing :tags="this.tags" />
+        <!-- <TagListing :tags="this.tags" /> -->
     </div>
 </template>
 
