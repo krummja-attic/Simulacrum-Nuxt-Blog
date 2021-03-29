@@ -1,9 +1,10 @@
 <template>
-  <div class="garden-plot">
-    <h4>{{ article.title }}</h4>
-    <div class="metadata flex flex-row">
-      <span class="date">{{ formatDate(article.createdAt) }}</span>
-      <span class="growth">{{ formatGrowth(article.growth) }}</span>
+  <div class="project-card flex flex-row">
+    <img :src="project.img" >
+    <div class="metadata flex flex-col">
+      <h4>{{ project.title }}</h4>
+      <span class="date">{{ formatDate(project.createdAt) }}</span>
+      <span class="description">{{ project.description }}</span>
     </div>
   </div>
 </template>
@@ -11,31 +12,20 @@
 <script>
 export default {
   props: {
-    article: Object
+    project: Object
   },
   methods: {
     formatDate(date)
     {
       const options = { year: 'numeric', month: 'numeric', day: 'numeric' };
       return new Date(date).toLocaleDateString('en', options);
-    },
-
-    formatGrowth(growth)
-    {
-      if (growth === "evergreen") {
-        return growth = "🌳 evergreen"
-      } else if (growth === "budding") {
-        return growth = "🌿 budding"
-      } else {
-        return growth = "🌱 seedling"
-      }
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.garden-plot {
+.project-card {
   clear: both;
   margin: 0em 0.8em 0.8em auto;
   max-width: 100%;
@@ -46,6 +36,10 @@ export default {
   transition: all 400ms ease-in-out 0s;
   font-family: 'Raleway', sans-serif;
 
+  img {
+    height: 200px;
+  }
+
   h4 {
     font-size: 16pt;
     text-align: left;
@@ -54,21 +48,18 @@ export default {
   .metadata {
     position: relative;
     width: 100%;
-    margin-top: 15px;
-    padding-top: 5px;
-    border-top: 1px solid $ash;
+    margin-left: 15px;
+    padding-left: 5px;
     text-align: left;
-    justify-content: space-between;
+    // justify-content: space-between;
 
     .date {
       font-size: 9pt;
       color: $ash;
     }
 
-    .growth {
-      font-size: 9pt;
-      font-weight: 700;
-      color: rgba(100, 155, 100, 1.0);
+    .description {
+      margin-top: 10px;
     }
   }
 

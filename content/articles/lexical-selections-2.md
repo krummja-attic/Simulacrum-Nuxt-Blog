@@ -1,13 +1,11 @@
 ---
-title: Writing for Linguistics
+title: Writing for Linguistics II
 description: Today we will delve into some practical matters concerning the basics of the presentational style used in the linguistic sciences. The goal here is to help you start putting together a palette of fundamentals that, when applied to specific situations in presenting your discussion, will provide important texture to your argument.
-img: https://write.uga.edu/wp-content/uploads/Writing-Intensive-Program-1024x727.jpg
-date: 2020-08-27
-tags:
- - writing
+createdAt: 2020-08-27
+growth: evergreen
 ---
 
-<span class="dropcap">H</span>ello again, and welcome to the second post in the *Lexical Selections* series. Today we will delve into some practical matters concerning the basics of the presentational style used in the linguistic sciences. The goal here is to help you start putting together a palette of fundamentals that, when applied to specific situations in presenting your discussion, will provide important texture to your argument. For now, we'll start with some of the more rote guidelines for linguistics writing, but in future posts we can start to get into some of the more interesting issues like the distinction between merely describing and providing satisfactory explanation. But those are issues that ultimately tie into methodological and theoretical concerns we have yet to appreciate fully, so let's not jump the gun and get into the more basic - but no less important - aspects of style.
+Hello again, and welcome to the second post in the *Lexical Selections* series. Today we will delve into some practical matters concerning the basics of the presentational style used in the linguistic sciences. The goal here is to help you start putting together a palette of fundamentals that, when applied to specific situations in presenting your discussion, will provide important texture to your argument. For now, we'll start with some of the more rote guidelines for linguistics writing, but in future posts we can start to get into some of the more interesting issues like the distinction between merely describing and providing satisfactory explanation. But those are issues that ultimately tie into methodological and theoretical concerns we have yet to appreciate fully, so let's not jump the gun and get into the more basic - but no less important - aspects of style.
 
 To begin, let's understand our [*writing situation*](https://wac.colostate.edu/resources/writing/guides/writing-situations/). Linguistics is properly understood to be a constellation of related sciences, each aimed at understanding some part of the uniquely human faculty for language. Different disciplines (e.g. syntax, phonology, semantics) have some differences in how they present themselves in writing, but there are certain universals that apply no matter the area of linguistics you're in. As a starting point, let's consider a paragraph that models what you might expect to say in some of the later essays for this course:
 

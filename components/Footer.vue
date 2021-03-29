@@ -1,22 +1,24 @@
 <template>
-    <div class="my-6">
-        <span class="copyright">© 2019-2021 Jonathan Crum</span>
+  <div class="footer layout-grid">
+    <div class="grid-wrapper">
+      <span class="copyright">© 2021 Jonathan Crum</span>
     </div>
+  </div>
 </template>
 
-
-<script>
-export default {
-
+<style lang="scss" scoped>
+.footer {
+  flex-shrink: 0;
+  margin-top: 15px;
+  padding: 15px;
 }
-</script>
 
+.grid-wrapper {
+  @apply col-start-2 col-end-12;
+}
 
-<style scoped>
 .copyright {
-    position: sticky;
-
-    text-align: center;
-    color: #909090;
+  text-align: center;
+  color: #909090;
 }
 </style>

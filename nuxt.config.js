@@ -40,7 +40,8 @@ export default {
       { src: '//unpkg.com/nomnoml/dist/nomnoml.js' }
     ]
   },
-  css: ['~assets/scss/colors.scss'],
+  css: ['~assets/scss/colors.scss',
+        '~assets/scss/main.scss'],
   plugins: [],
   components: true,
   buildModules: [

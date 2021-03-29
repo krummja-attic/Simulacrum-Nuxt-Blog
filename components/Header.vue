@@ -1,26 +1,110 @@
 <template>
-  <div>
-    <NuxtLink to="/">
-      <div>
-        <img class="logo w-16 xs:w-24 sm:w-24 md:w-32 lg:w-48 xl:w-48" src="/logo.svg">
+  <div class="layout-grid">
+    <div class="header flex flex-row">
+      <NuxtLink to="/">
+        <div class="logo-wrapper">
+          <img class="logo" src="/logo.svg">
+          <img class="logo-alt" src="/logo_purple.svg">
+        </div>
+      </NuxtLink>
+
+      <div class="navbar flex flex-row">
+        <NuxtLink
+          class="navitem"
+          active-class="navitem-active"
+          :class="{'navitem-secondary': this.$route.path != '/'}"
+          to="/">
+            home
+        </NuxtLink>
+
+        <NuxtLink
+          class="navitem"
+          active-class="navitem-active"
+          :class="{'navitem-secondary': this.$route.path != '/gardenIndex'}"
+          to="/gardenIndex">
+            digital garden
+        </NuxtLink>
+
+        <NuxtLink
+          class="navitem"
+          active-class="navitem-active"
+          :class="{'navitem-secondary': this.$route.path != '/notebook'}"
+          to="/notebook">
+            notebook
+        </NuxtLink>
+
+        <NuxtLink
+          class="navitem"
+          active-class="navitem-active"
+          :class="{'navitem-secondary': this.$route.path != '/about'}"
+          to="/about">
+            about
+        </NuxtLink>
       </div>
-
-      <h1 class="title xs:text-3xl md:text-5xl font-bold tracking-wide">
-          Simula<span style="color: rgba(75, 60, 90, 1)">crum</span>
-      </h1>
-
-      <h2 class="title md:mb-8 xs:text-xl md:text-xl">Jonathan Crum's digital garden</h2>
-    </NuxtLink>
+    </div>
   </div>
 </template>
 
-<style scoped>
-.title {
-  color: rgba(75, 60, 90, 0.8);
-}
+<style lang="scss" scoped>
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;500;700&display=swap');
 
-.logo {
-  display: block;
-  margin: 24px auto 4px auto;
+.header {
+  @apply col-start-2 col-end-12;
+  @apply mt-3 mb-10;
+
+  height: 68px;
+  justify-content: space-between;
+  border-bottom: 2px solid rgba(42, 42, 42, 0.5);
+
+  .logo-wrapper {
+    position: relative;
+    height: auto;
+    width: 100px;
+  }
+
+  .logo-alt {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+
+    transition: opacity 0.2s;
+  }
+
+  .logo-wrapper:hover .logo-alt {
+    opacity: 1;
+  }
+
+  .navbar {
+    position: relative;
+    margin-top: 20px;
+    height: 24px;
+    width: 550px;
+    justify-content: space-between;
+
+    font-family: 'Raleway', sans-serif;
+    font-size: 20pt;
+
+    .navitem {
+      @apply transition duration-200 ease-in-out;
+
+      &:hover {
+        text-shadow: 1px 0px 0px black;
+      }
+    }
+
+    .navitem-active {
+      font-weight: 700;
+      box-shadow:
+        0 4px 0 0 $papier,
+        0 10px 0 0 $accent-purple-3;
+    }
+
+    .navitem-secondary {
+      font-weight: 500;
+      box-shadow: none;
+    }
+  }
 }
 </style>
