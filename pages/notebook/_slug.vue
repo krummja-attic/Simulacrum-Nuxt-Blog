@@ -1,33 +1,27 @@
 <template>
   <div class="layout-grid">
-    <NuxtLink class="return" to="/gardenIndex">Back to the Garden</NuxtLink>
+    <NuxtLink class="return" to="/notebookIndex">Back to the Notebook</NuxtLink>
 
-    <div class="article flex flex-col">
-      <div class="header-wrapper flex flex-col">
-        <h1>{{ article.title }}</h1>
-        <TagList :article=article />
-      </div>
+    <div class="note flex flex-col">
+      <h1>{{ note.title }}</h1>
       <p class="abstract">
-        {{ article.description }}
+        {{ note.description }}
       </p>
 
-      <div class="article-body">
-        <nuxt-content :document="article" />
+      <div class="note-body">
+        <nuxt-content :document="note" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import TagList from '@/components/TagList';
 export default {
   layout: 'default',
-  components: {
-    TagList
-  },
   async asyncData({ $content, params }) {
-    const article = await $content('articles', params.slug).fetch();
-    return { article }
+    const note = await $content('notebook', params.slug).fetch();
+
+    return { note }
   }
 }
 </script>
@@ -36,7 +30,7 @@ export default {
 .return {
   @apply col-start-2 col-end-4;
   margin-top: 20px;
-  width: 150px;
+  width: 168px;
   text-align: left;
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
@@ -52,7 +46,7 @@ export default {
   }
 }
 
-.article {
+.note {
   font-family: 'Raleway', sans-serif;
 
   h1 {
@@ -68,14 +62,14 @@ export default {
     font-size: 14pt;
   }
 
-  .article-body {
+  .note-body {
     margin-top: 140px;
     text-align: justify;
   }
 }
 
 @screen md {
-  .article {
+  .note {
     @apply col-start-2 col-end-12;
 
     font-family: 'Raleway', sans-serif;
@@ -94,7 +88,7 @@ export default {
       font-size: 14pt;
     }
 
-    .article-body {
+    .note-body {
       margin-top: 80px;
       margin-right: 35%;
       text-align: justify;

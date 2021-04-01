@@ -3,6 +3,7 @@ title: Writing for Linguistics I
 description: This is the first post in a series of blog posts aimed at exploring writing-related topics for UGA's LING3150W. The central focus of this series is to address issues in such areas as writing for the sciences, interdisciplinary writing, and writing for linguistics.
 createdAt: 2020-08-19
 growth: evergreen
+tags: Linguistics, Writing
 ---
 
 Hello there, and welcome! This is the first post in a series of blog posts aimed at exploring writing-related topics for UGA's LING3150W. Normally, I would be supporting the course face-to-face, but given the current SARS-CoV-2 pandemic, I wanted to find a way of reliably delivering writing-related content to students of the courses I support without a physical presence on campus.

@@ -21,7 +21,8 @@ export default {
     GardenBlock,
     ProjectBlock
   },
-  async asyncData({ $content, params }) {
+  async asyncData ({ $content, params })
+  {
     const articleData = await $content('articles', params.slug)
       .only(['title', 'createdAt', 'growth', 'img', 'slug'])
       .sortBy('createdAt', 'desc')
