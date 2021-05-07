@@ -1,5 +1,5 @@
 <template>
-  <div class="layout-grid">
+  <div class="layout-grid header-wrapper">
     <div class="header flex flex-row">
       <NuxtLink to="/">
         <div class="logo-wrapper">

@@ -21,7 +21,7 @@
 
 @screen xl {
   .contact-block {
-    @apply col-start-8 col-end-12;
+    @apply col-start-8 col-end-12 items-end;
   }
 }
 </style>

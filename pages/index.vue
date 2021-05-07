@@ -2,6 +2,10 @@
   <div class="layout-grid">
     <TitleBlock />
     <ContactBlock />
+    <div class="socials">
+      <span>Find me on</span>
+      <a href="https://github.com/krummja"><img src="github.webp" /></a>
+    </div>
     <GardenBlock :articles=articles />
     <ProjectBlock :projects=projects />
   </div>
@@ -58,3 +62,20 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.socials {
+  @apply flex flex-row;
+  @apply col-start-2 col-end-8;
+
+  text-align: left;
+  font-family: 'Raleway', sans-serif;
+  font-size: 18pt;
+  height: 50px;
+
+  img {
+    margin-left: 16px;
+    max-height: 35px;
+  }
+}
+</style>
