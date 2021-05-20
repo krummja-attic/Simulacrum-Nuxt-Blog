@@ -5,7 +5,7 @@
       This is a cultivated selection of articles and notes on a variety of topics, including linguistics, programming, writing, design - basically anything I'm currently exploring. Some articles are only Seedlings without much to them, some are Budding thoughts and sketches, and yet others are fully developed Evergreen notes with a clear thesis and discussion.
     </span>
 
-    <TagBlock />
+    <TagBlock :tags=tags />
 
     <div class="garden">
       <NuxtLink
@@ -32,21 +32,26 @@ export default {
   },
   async asyncData({ $content, params, store }) {
 
+    const tags = await $content('tags', params.slug)
+      .only(['title'])
+      .sortBy('createdAt')
+      .fetch()
+
     if (store.state.tags.activeTags.length > 0) {
       const articles = await $content('articles', params.slug)
-        .where({ tags: { $containsAny: store.state.tags.activeTags } })
+        .where({ tags: { $contains: store.state.tags.activeTags } })
         .only(['title', 'createdAt', 'growth', 'slug'])
         .sortBy('createdAt')
         .fetch()
 
-      return { articles }
+      return { articles, tags }
     } else {
       const articles = await $content('articles', params.slug)
         .only(['title', 'createdAt', 'growth', 'slug'])
         .sortBy('createdAt')
         .fetch()
 
-      return { articles }
+      return { articles, tags }
     }
   }
 }

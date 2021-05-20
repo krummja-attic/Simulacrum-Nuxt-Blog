@@ -32,7 +32,8 @@ export default {
       .sortBy('createdAt', 'desc')
       .fetch()
 
-    const projectData = await $content('projects', params.slug)
+    const projectData = await $content('notebook', params.slug)
+      .where({ tags: { $containsAny: "Project" } })
       .only(['title', 'createdAt', 'description', 'img', 'slug'])
       .sortBy('createdAt')
       .fetch()

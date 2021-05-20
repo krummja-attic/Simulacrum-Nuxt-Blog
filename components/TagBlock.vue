@@ -1,7 +1,11 @@
 <template>
   <div class="tag-block flex flex-row flex-wrap">
-    <Tag tagName="Writing" />
-    <Tag tagName="Linguistics" />
+    <div 
+      v-for="tag of tags"
+      :key="tag.slug"
+    >
+      <Tag :tag-name=tag.title />
+    </div>
   </div>
 </template>
 
@@ -10,6 +14,12 @@ import Tag from '@/components/Tag'
 export default {
   components: {
     Tag
+  },
+  props: {
+    tags: {
+      type: Array,
+      default: []
+    }
   }
 }
 </script>
@@ -18,6 +28,6 @@ export default {
 .tag-block {
   @apply col-start-2 col-end-8;
 
-  height: 160px;
+  height: auto;
 }
 </style>

@@ -34,6 +34,7 @@ export default {
 
         tag.style.backgroundColor = 'rgba(115, 90, 140, 0.3)';
         tag.style.color = 'rgba(115, 90, 140, 1)';
+        
       } else if (this.tagActive === true) {
         this.tagActive = false;
         this.$store.commit('tags/remove', this.tagName);
@@ -52,7 +53,7 @@ export default {
 
 <style lang="scss" scoped>
 .tag-body {
-  margin: 0 4px;
+  margin: 4px 4px;
   padding: 4px 6px;
   height: 34px;
   border: 1px solid rgba(52, 61, 68, 0.05);

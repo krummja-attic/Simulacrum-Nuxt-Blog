@@ -1,6 +1,6 @@
 <template>
   <div class="layout-grid">
-    <h1 class="col-start-2 col-end-6">{{ tag.name }}</h1>
+    <h1 class="col-start-2 col-end-6">{{ tag.title }}</h1>
     <div class="garden">
       <NuxtLink
       v-for="article of articles"
@@ -28,7 +28,7 @@ export default {
       .fetch()
     const tag = tags.length > 0 ? tags[0] : {}
     const articles = await $content('articles', params.slug)
-      .where({ tags: { $contains: tag.name } })
+      .where({ tags: { $contains: tag.title } })
       .sortBy('createdAt', 'asc')
       .fetch()
     return {

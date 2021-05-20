@@ -8,7 +8,7 @@
     <NuxtLink
     v-for="project of projects"
     :key="project.slug"
-    :to="{ name: 'project-slug', params: { slug: project.slug } }"
+    :to="{ name: 'notebook-slug', params: { slug: project.slug } }"
     class="card-wrapper"
     >
       <ProjectCard :project=project />
