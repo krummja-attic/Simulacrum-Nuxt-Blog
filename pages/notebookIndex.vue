@@ -1,11 +1,12 @@
 <template>
   <div class="layout-grid">
 
-    <!-- Notebook Start -->
     <h1 class="col-start-2 col-end-8">Jonathan's Notebook</h1>
     <span class="description">
       An assortment of notes in various states of refinement.
     </span>
+
+    <TagBlock :tags=tags />
 
     <div class="notebook">
       <ul class="note-list">
@@ -25,23 +26,40 @@
         </li>
       </ul>
     </div>
-    <!-- Notebook End -->
 
   </div>
 </template>
 
 <script>
+import TagBlock from '@/components/TagBlock';
+
 export default {
+  components: {
+    TagBlock
+  },
   layout: 'default',
-  async asyncData({ $content, params }) {
-    const notebook = await $content('notebook', params.slug)
-      .only(['title', 'createdAt', 'project', 'repo', 'slug'])
+  async asyncData({ $content, params, store }) {
+    
+    const tags = await $content('tags', params.slug)
+      .only(['title'])
       .sortBy('createdAt')
       .fetch()
 
-    return {
-      notebook
+    if (store.state.tags.activeTags.length > 0) {
+      const notebook = await $content('notebook', params.slug)
+        .where({ tags: { $contains: store.state.tags.activeTags } })
+        .only(['title', 'createdAt', 'project', 'repo', 'slug'])
+        .sortBy('createdAt')
+        .fetch()
+      return { notebook, tags }
+    } else {
+      const notebook = await $content('notebook', params.slug)
+        .only(['title', 'createdAt', 'project', 'repo', 'slug'])
+        .sortBy('createdAt')
+        .fetch()
+      return { notebook, tags }
     }
+
   },
   methods: {
     formatDate(date)

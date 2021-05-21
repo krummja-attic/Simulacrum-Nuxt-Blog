@@ -6,7 +6,8 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "deploy": "push-dir --dir=$HOME/Workspace/Web/krummja.github.io --branch=master --cleanup"
   },
   "dependencies": {
     "@nuxt/content": "^1.13.1",
@@ -28,6 +29,7 @@
     "fs": "^0.0.1-security",
     "node-sass": "^5.0.0",
     "postcss-scoped": "^0.0.0",
+    "push-dir": "^0.4.1",
     "sass": "^1.32.8",
     "sass-loader": "^10.1.1",
     "stylelint-config-standard": "^21.0.0"

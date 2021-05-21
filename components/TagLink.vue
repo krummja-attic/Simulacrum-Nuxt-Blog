@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink :to="`/garden/tags/${tagName}`" class="tag-body flex flex-col">
+  <NuxtLink :to="`/tags/${tagName}`" class="tag-body flex flex-col">
     {{ tagName }}
   </NuxtLink>
 </template>

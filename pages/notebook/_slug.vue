@@ -3,7 +3,10 @@
     <NuxtLink class="return" to="/notebookIndex">Back to the Notebook</NuxtLink>
 
     <div class="note flex flex-col">
-      <h1>{{ note.title }}</h1>
+      <div class="header-wrapper flex flex-col">
+        <h1>{{ note.title }}</h1>
+        <TagList :article=note />
+      </div>
       <p class="abstract">
         {{ note.description }}
       </p>
@@ -16,8 +19,12 @@
 </template>
 
 <script>
+import TagList from '@/components/TagList';
 export default {
   layout: 'default',
+  components: {
+    TagList
+  },
   async asyncData({ $content, params }) {
     const note = await $content('notebook', params.slug).fetch();
 

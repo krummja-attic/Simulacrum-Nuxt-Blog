@@ -37,7 +37,7 @@ export default {
   },
   watch: {
     '$route' () {
-      this.showMobileMenu = false
+      this.showMobileMenu = false;
     }
   }
 }

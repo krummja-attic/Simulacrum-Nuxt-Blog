@@ -1,15 +1,21 @@
 export const state = () => ({
-  activeTags: [],
-  inactiveTags: []
+  activeTags: []
 })
 
 export const mutations = {
   add (state, tag) {
-    state.inactiveTags = state.inactiveTags.filter(item => item != tag);
-    state.activeTags.push(tag);
+    state.activeTags.push(tag.tagName);
   },
   remove (state, tag) {
-    state.inactiveTags.push(tag);
-    state.activeTags = state.activeTags.filter(item => item != tag);
+    state.activeTags = state.activeTags.filter(item => item != tag.tagName);
+  },
+  reset (state, arr) {
+    state.activeTags = arr;
+  }
+}
+
+export const getters = {
+  active: state => {
+    return state.activeTags;
   }
 }

@@ -50,7 +50,7 @@ export default {
   },
   css: ['~assets/scss/colors.scss',
         '~assets/scss/main.scss'],
-  plugins: [],
+  plugins: [{ src: '~/plugins/voronoi' }],
   components: true,
   buildModules: [
     '@nuxtjs/tailwindcss',
@@ -75,6 +75,7 @@ export default {
     },
     splitChunks: {
       layouts: true
-    }
+    },
+    transpile: ['d3']
   }
 }

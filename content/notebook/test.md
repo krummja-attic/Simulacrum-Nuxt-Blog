@@ -1,6 +1,10 @@
 ---
 title: Test Note
+description: Blah blah blah.
+createdAt: 2021-03-20
+tags: Gamedev, Programming, Emacs
 ---
+
 
 ## Heading 1
 

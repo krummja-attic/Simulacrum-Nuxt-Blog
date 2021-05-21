@@ -53,6 +53,9 @@ export default {
 
       return { articles, tags }
     }
+  },
+  beforeMount () {
+    this.$store.commit('tags/reset', []);
   }
 }
 </script>

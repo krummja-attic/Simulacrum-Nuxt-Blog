@@ -20,7 +20,7 @@ export default {
   data () {
     return {
       uid: uuid3(),
-      tagActive: false
+      tagActive: false,
     }
   },
   methods: {
@@ -29,7 +29,7 @@ export default {
 
       if (this.tagActive === false) {
         this.tagActive = true;
-        this.$store.commit('tags/add', this.tagName);
+        this.$store.commit('tags/add', this);
         this.refresh();
 
         tag.style.backgroundColor = 'rgba(115, 90, 140, 0.3)';
@@ -37,7 +37,7 @@ export default {
         
       } else if (this.tagActive === true) {
         this.tagActive = false;
-        this.$store.commit('tags/remove', this.tagName);
+        this.$store.commit('tags/remove', this);
         this.refresh();
 
         tag.style.backgroundColor = 'inherit';
